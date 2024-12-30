@@ -4,7 +4,7 @@ export const teamMembers: TeamMemberType[] = [
   {
     name: 'John Doe',
     role: 'Lead Organizer',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqH1xMdB_eDuui9nFx0e68olzk7w7mw7TdXpGJqqmXyrAU6tdLlkEZUbEHXYdTuHsy8jA&usqp=CAU',
     bio: 'Passionate about building developer communities and fostering innovation.',
     social: {
       github: 'https://github.com',
@@ -15,7 +15,7 @@ export const teamMembers: TeamMemberType[] = [
   {
     name: 'Jane Smith',
     role: 'Technical Lead',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
+    image: 'https://t3.ftcdn.net/jpg/02/96/07/04/360_F_296070450_Jd5JTMFIiIOycPxiXFy70sBx5enf2wuB.jpg',
     bio: 'Google Developer Expert in Web Technologies and Cloud Computing.',
     social: {
       github: 'https://github.com',

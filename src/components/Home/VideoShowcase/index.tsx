@@ -2,15 +2,15 @@ import { VideoCard } from './VideoCard'
 
 const videos = [
   {
-    title: 'DevFest 2023 Highlights',
-    thumbnail: '/videos/devfest-2023.jpg',
-    videoUrl: 'https://youtube.com/watch?v=devfest2023',
+    title: 'DevFest 2024 Highlights',
+    thumbnail: 'https://www.devfestnagpur.in/img/past-devfest/image-1.png',
+    videoUrl: 'https://youtu.be/7SFiL81-_Ck',
     duration: '3:45',
   },
   {
     title: 'Cloud Workshop Series',
-    thumbnail: '/videos/cloud-workshop.jpg',
-    videoUrl: 'https://youtube.com/watch?v=cloud-workshop',
+    thumbnail: 'https://storage.googleapis.com/gweb-cloudblog-publish/original_images/BlogHeader_Set2_D_ShTJD99.png',
+    videoUrl: 'https://youtu.be/CQC8fUnVQ9c?list=PLimnc3HV--H3d7qcBvnDd_G2_NW-yoDpR',
     duration: '2:30',
   },
 ]

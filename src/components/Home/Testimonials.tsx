@@ -14,14 +14,14 @@ const testimonials: Testimonial[] = [
     name: 'Student Developer',
     role: 'Computer Science',
     content: 'GDG PESCE helped me grow as a developer. The workshops and mentorship were invaluable.',
-    image: '/testimonials/student1.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/024/724/633/non_2x/a-happy-smiling-young-college-student-with-a-book-in-hand-isolated-on-a-transparent-background-generative-ai-free-png.png',
   },
   {
     id: '2',
     name: 'Tech Lead',
     role: 'Industry Expert',
     content: 'The community at GDG PESCE is incredible. The enthusiasm and dedication of students is inspiring.',
-    image: '/testimonials/expert1.jpg',
+    image: 'https://img.freepik.com/free-photo/pretty-young-student-with-big-glasses-near-some-books-smiling-white-background_231208-1850.jpg',
   },
 ];
 

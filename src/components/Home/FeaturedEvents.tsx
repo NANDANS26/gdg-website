@@ -14,14 +14,14 @@ const upcomingEvents: Event[] = [
     title: 'Web Development Workshop',
     date: '2024-02-01',
     description: 'Learn modern web development with React and TypeScript',
-    image: '/events/web-dev.jpg',
+    image: 'https://i.pinimg.com/originals/ba/0e/b8/ba0eb82dbe74fb21925083c2ea7475b4.jpg',
   },
   {
     id: '2',
     title: 'Cloud Computing Seminar',
     date: '2024-02-15',
     description: 'Deep dive into cloud technologies and best practices',
-    image: '/events/cloud.jpg',
+    image: 'https://th.bing.com/th/id/R.38964753a7746becd61cf573eb9b12ca?rik=S4dm%2fPPil1pzWw&riu=http%3a%2f%2fwww.itbriefcase.net%2fwp-content%2fuploads%2f2018%2f04%2fcloud-security.jpg&ehk=5jgyoaXTKwdBUqqCU7G2QFjntpdwbphEnEy6EuKjWHk%3d&risl=&pid=ImgRaw&r=0',
   },
 ]
 

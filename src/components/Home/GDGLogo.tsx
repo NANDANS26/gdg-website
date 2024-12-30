@@ -1,55 +1,34 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Mesh } from 'three';
 import * as THREE from 'three';
 
 export function GDGLogo() {
-  const meshRef = useRef<Mesh>(null);
+  const groupRef = useRef<THREE.Group>(null); // Specify the type for the ref
 
-  // Rotation animation
+  // Add continuous rotation to the entire group
   useFrame((_state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.5;
+    if (groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.5; // Continuous rotation along the Y-axis
     }
   });
 
-  // Function to create a shape (upper or lower half of a left or right angle) with curved endpoints
-  const createHalfAngleShape = (isLeft: boolean, isUpper: boolean) => {
+  // Function to create a rounded rectangle shape
+  const createRoundedBar = () => {
     const shape = new THREE.Shape();
+    const width = 1.6; // Increased size
+    const height = 0.6; // Increased height
+    const radius = 0.3; // Adjusted for proportion
 
-    if (isLeft) {
-      if (isUpper) {
-        // Upper half of left angle <
-        shape.moveTo(0.8, 0); // Reduced width
-        shape.lineTo(0, 0);
-        shape.lineTo(0.4, 1.4); // Increased height
-        shape.quadraticCurveTo(0.8, 2, 1.2, 1.4); // Sharper inward curve
-        shape.lineTo(0.8, 0);
-      } else {
-        // Lower half of left angle <
-        shape.moveTo(0.8, 0); // Reduced width
-        shape.lineTo(0, 0);
-        shape.lineTo(0.4, -1.4); // Increased height
-        shape.quadraticCurveTo(0.8, -2, 1.2, -1.4); // Sharper inward curve
-        shape.lineTo(0.8, 0);
-      }
-    } else {
-      if (isUpper) {
-        // Upper half of right angle >
-        shape.moveTo(-0.8, 0); // Reduced width
-        shape.lineTo(0, 0);
-        shape.lineTo(-0.4, 1.4); // Increased height
-        shape.quadraticCurveTo(-0.8, 2, -1.2, 1.4); // Sharper inward curve
-        shape.lineTo(-0.8, 0);
-      } else {
-        // Lower half of right angle >
-        shape.moveTo(-0.8, 0); // Reduced width
-        shape.lineTo(0, 0);
-        shape.lineTo(-0.4, -1.4); // Increased height
-        shape.quadraticCurveTo(-0.8, -2, -1.2, -1.4); // Sharper inward curve
-        shape.lineTo(-0.8, 0);
-      }
-    }
+    // Create a rounded rectangle
+    shape.moveTo(-width / 2 + radius, -height / 2);
+    shape.lineTo(width / 2 - radius, -height / 2);
+    shape.quadraticCurveTo(width / 2, -height / 2, width / 2, -height / 2 + radius);
+    shape.lineTo(width / 2, height / 2 - radius);
+    shape.quadraticCurveTo(width / 2, height / 2, width / 2 - radius, height / 2);
+    shape.lineTo(-width / 2 + radius, height / 2);
+    shape.quadraticCurveTo(-width / 2, height / 2, -width / 2, height / 2 - radius);
+    shape.lineTo(-width / 2, -height / 2 + radius);
+    shape.quadraticCurveTo(-width / 2, -height / 2, -width / 2 + radius, -height / 2);
 
     return shape;
   };
@@ -57,53 +36,51 @@ export function GDGLogo() {
   // Extrude geometry settings
   const extrudeSettings = {
     steps: 1,
-    depth: 0.15, // Thinner symbols
-    bevelEnabled: false, // Bevel is disabled for a cleaner look
+    depth: 0.5, // Increased thickness for better visibility
+    bevelEnabled: false,
   };
 
   return (
-    <group ref={meshRef}>
-      {/* Left symbol < with green on top and yellow on bottom */}
-      <mesh position={[-1.6, 0, 0]}> {/* Increased gap */}
-        <extrudeGeometry args={[createHalfAngleShape(true, true), extrudeSettings]} />
-        <meshPhysicalMaterial 
-          color="#0F9D58" // Green
-          metalness={0.4}
-          roughness={0.2}
-          clearcoat={1}
-          clearcoatRoughness={0.1}
+    <group ref={groupRef}> {/* Add rotation to the entire group */}
+      {/* Left symbol (<) */}
+      <mesh position={[-1.2, 0.4, 0]} rotation={[0, 0, Math.PI / 4]}> {/* Red bar with reduced gap */}
+        <extrudeGeometry args={[createRoundedBar(), extrudeSettings]} />
+        <meshPhysicalMaterial
+          color="#DB4437" // Red
+          metalness={0.0} // Set to 0 for a non-metallic look
+          roughness={0.3} // Increased roughness for better visibility
+          transparent={false} // Ensure transparency is off
+          polygonOffset={true} // Enable polygon offset
+          polygonOffsetFactor={1} // Adjust factor as needed
         />
       </mesh>
-      <mesh position={[-1.6, 0, 0]}>
-        <extrudeGeometry args={[createHalfAngleShape(true, false), extrudeSettings]} />
-        <meshPhysicalMaterial 
-          color="#F4B400" // Yellow
-          metalness={0.4}
-          roughness={0.2}
-          clearcoat={1}
-          clearcoatRoughness={0.1}
+      <mesh position={[-1.2, -0.4, 0]} rotation={[0, 0, -Math.PI / 4]}> {/* Blue bar with reduced gap */}
+        <extrudeGeometry args={[createRoundedBar(), extrudeSettings]} />
+        <meshStandardMaterial
+          color="#4285F4" // Blue
+          metalness={0.0} // Set to 0 for a non-metallic look
+          roughness={0.1} // Lower roughness for a smoother appearance
         />
       </mesh>
 
-      {/* Right symbol > with red on top and blue on bottom */}
-      <mesh position={[1.6, 0, 0]}> {/* Increased gap */}
-        <extrudeGeometry args={[createHalfAngleShape(false, true), extrudeSettings]} />
-        <meshPhysicalMaterial 
-          color="#DB4437" // Red
-          metalness={0.4}
-          roughness={0.2}
-          clearcoat={1}
-          clearcoatRoughness={0.1}
+      {/* Right symbol (>) */}
+      <mesh position={[1.2, 0.4, 0]} rotation={[0, 0, -Math.PI / 4]}> {/* Green bar with reduced gap */}
+        <extrudeGeometry args={[createRoundedBar(), extrudeSettings]} />
+        <meshStandardMaterial
+          color="#0F9D58" // Green
+          metalness={0.0} // Set to 0 for a non-metallic look
+          roughness={0.1} // Lower roughness for a smoother appearance
         />
       </mesh>
-      <mesh position={[1.6, 0, 0]}>
-        <extrudeGeometry args={[createHalfAngleShape(false, false), extrudeSettings]} />
-        <meshPhysicalMaterial 
-          color="#4285F4" // Blue
-          metalness={0.4}
-          roughness={0.2}
-          clearcoat={1}
-          clearcoatRoughness={0.1}
+      <mesh position={[1.2, -0.4, 0]} rotation={[0, 0, Math.PI / 4]}> {/* Yellow bar with reduced gap */}
+        <extrudeGeometry args={[createRoundedBar(), extrudeSettings]} />
+        <meshStandardMaterial
+          color="#F4B400" // Yellow
+          metalness={0.0} // Set to 0 for a non-metallic look
+          roughness={0.3} // Increased roughness for better visibility
+          transparent={false} // Ensure transparency is off
+          polygonOffset={true} // Enable polygon offset
+          polygonOffsetFactor={1} // Adjust factor as needed
         />
       </mesh>
     </group>

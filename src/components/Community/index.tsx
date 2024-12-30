@@ -16,7 +16,7 @@ const events = [
     description: 'Learn Google Cloud Platform fundamentals with hands-on labs',
     location: 'PESCE Campus',
     attendees: 150,
-    image: 'https://storage.googleapis.com/gweb-cloudblog-publish/images/CloudStudyJam.max-2000x2000.jpg',
+    image: 'https://www.gdghk.org/wp-content/uploads/2018/02/Screen-Shot-2018-02-05-at-2.12.20-PM.png',
   },
   {
     id: '2',
@@ -47,7 +47,7 @@ const events = [
     description: 'Month-long cloud learning program with certificates',
     location: 'Virtual',
     attendees: 300,
-    image: 'https://storage.googleapis.com/gweb-cloudblog-publish/images/GCP_Essentials.max-2000x2000.jpg',
+    image: 'https://logowik.com/content/uploads/images/google-cloud8906.jpg',
   },
   {
     id: '5',
@@ -57,7 +57,7 @@ const events = [
     description: 'Weekly sessions on ML fundamentals and TensorFlow',
     location: 'Hybrid',
     attendees: 80,
-    image: 'https://developers.google.com/static/machine-learning/crash-course/images/ml_crash_course_social.png',
+    image: 'https://www.pngitem.com/pimgs/m/346-3460443_machine-learning-course-near-me-machine-learning-logo.png',
   },
   // Past Events
   {
@@ -68,7 +68,7 @@ const events = [
     description: 'Annual developer festival with tech talks and workshops',
     location: 'PESCE Campus',
     attendees: 500,
-    image: 'https://developers.google.com/static/community/devfest/images/devfest-social.png',
+    image: 'https://media.licdn.com/dms/image/v2/C4D12AQH__ePJ53a3YQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520186980337?e=2147483647&v=beta&t=ase3DvbNYpFZFL2PrN_QmuNPMI2INHzdnZv077o-62U',
   },
   {
     id: '7',
@@ -78,7 +78,7 @@ const events = [
     description: 'Building real-time applications with Firebase',
     location: 'PESCE Campus',
     attendees: 150,
-    image: 'https://firebase.google.com/static/images/homepage/cloud-plus-firebase_1920.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSeZUaz8RSMdFEcRiFKAGufdUORq4sHYDcpLikgOTB8Z3f7acXUxbtva4TL_cDD1blzNU&usqp=CAU',
   },
   {
     id: '8',
