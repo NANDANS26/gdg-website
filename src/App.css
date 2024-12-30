@@ -1,0 +1,141 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover { 
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #61dafb;
+  text-decoration: underline;
+}
+
+/* Adjust the logo container */
+.logo-container {
+  margin-left: -1rem; /* Move the logo to the left */
+}
+
+/* Adjust the logo image directly */
+.logo-container img {
+  margin-left: -1rem; /* Move the logo image to the left */
+}
+
+/* Adjust the Join GDG button */
+.join-gdg-button {
+  margin-left: 2rem; /* Ensure the button has space */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.join-gdg-button:hover {
+  background-color: #4a90e2; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Adjust the container of the Join GDG button */
+.lg\:justify-end {
+  padding-right: 1rem; /* Add padding to the right of the container */
+}
+
+/* General improvements for layout */
+.container {
+  padding: 2rem; /* Consistent padding for all containers */
+}
+
+.nav-link {
+  margin-left: 2rem; /* Consistent spacing for nav links */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 1rem; /* Smaller font size on mobile */
+    margin-left: 1rem; /* Less margin on mobile */
+  }
+
+  .join-gdg-button {
+    margin-left: 1rem; /* Adjust button margin on mobile */
+  }
+}
+
+/* Button hover effect */
+.bg-gdg-blue {
+  background-color: #4a90e2; /* Example color */
+}
+
+.bg-gdg-blue-dark {
+  background-color: #357ABD; /* Darker shade for hover */
+}
+
+/* Add 3D effects to buttons and inputs */
+input, textarea, button {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus, button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: #4a90e2; /* Example button color */
+}
+
+button:hover {
+  background-color: #357ABD; /* Darker shade for hover */
+}
+
+/* Add a gradient background animation */
+body {
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

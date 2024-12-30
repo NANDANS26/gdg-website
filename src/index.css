@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 255 255 255;
+    --color-foreground: 17 24 39;
+  }
+
+  .dark {
+    --color-background: 17 24 39;
+    --color-foreground: 255 255 255;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+  }
+}
+
+@layer components {
+  .logo-3d-container {
+    @apply w-full h-[400px] relative bg-gradient-to-b from-gdg-blue-50 to-transparent dark:from-gdg-blue-900/20 dark:to-transparent;
+  }
+
+  .hero-section {
+    @apply relative overflow-hidden bg-gradient-to-br from-white to-gdg-blue-50 dark:from-gray-900 dark:to-gdg-blue-900/20;
+  }
+
+  .hero-content {
+    @apply relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center;
+  }
+
+  .page-container {
+    @apply pt-24 px-4 max-w-7xl mx-auto;
+  }
+
+  .page-title {
+    @apply text-3xl font-bold text-gray-900 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-gdg-blue to-gdg-green;
+  }
+
+  .nav-link {
+    @apply text-gray-600 dark:text-gray-300 hover:text-gdg-blue dark:hover:text-gdg-blue-400 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-gdg dark:shadow-none border border-gray-100 dark:border-gray-700 hover:shadow-gdg-lg dark:hover:border-gdg-blue-700 transition-all duration-300;
+  }
+
+  .button-primary {
+    @apply bg-gdg-blue hover:bg-gdg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 shadow-gdg hover:shadow-gdg-lg;
+  }
+
+  .button-secondary {
+    @apply bg-gdg-green hover:bg-gdg-green-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-gdg-blue-400 dark:focus:ring-gdg-blue-700 focus:border-transparent dark:bg-gray-700 transition-all duration-200;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

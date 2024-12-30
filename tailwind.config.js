@@ -1,0 +1,80 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'gdg-blue': {
+          DEFAULT: '#4285F4',
+          50: '#EBF2FE',
+          100: '#D7E5FD',
+          200: '#B0CCFB',
+          300: '#89B4F9',
+          400: '#629BF7',
+          500: '#4285F4',
+          600: '#0D63EE',
+          700: '#0A4DBB',
+          800: '#083788',
+          900: '#052156',
+        },
+        'gdg-red': {
+          DEFAULT: '#DB4437',
+          50: '#FAE7E5',
+          100: '#F5CFCC',
+          200: '#EC9E99',
+          300: '#E36D66',
+          400: '#DF574E',
+          500: '#DB4437',
+          600: '#B32D21',
+          700: '#842219',
+          800: '#551610',
+          900: '#270B08',
+        },
+        'gdg-yellow': {
+          DEFAULT: '#F4B400',
+          50: '#FEF3D9',
+          100: '#FEE8B0',
+          200: '#FDD87D',
+          300: '#FBC84A',
+          400: '#F5BC17',
+          500: '#F4B400',
+          600: '#C18E00',
+          700: '#8E6800',
+          800: '#5B4200',
+          900: '#291D00',
+        },
+        'gdg-green': {
+          DEFAULT: '#0F9D58',
+          50: '#E3F5EC',
+          100: '#C7EBD9',
+          200: '#90DBB3',
+          300: '#58CB8D',
+          400: '#21BB67',
+          500: '#0F9D58',
+          600: '#0B7441',
+          700: '#084B2A',
+          800: '#042213',
+          900: '#000000',
+        },
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+      },
+      boxShadow: {
+        'gdg': '0 4px 6px -1px rgba(66, 133, 244, 0.1), 0 2px 4px -1px rgba(66, 133, 244, 0.06)',
+        'gdg-lg': '0 10px 15px -3px rgba(66, 133, 244, 0.1), 0 4px 6px -2px rgba(66, 133, 244, 0.05)',
+      },
+    },
+  },
+  plugins: [],
+}
